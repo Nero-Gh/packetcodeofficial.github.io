@@ -13,5 +13,5 @@ window.addEventListener('load', () => {
         // preloader.style.transition = 'transform 0.5s';
         preloader.style.transform = 'scale(0)';
         preloader.style.transition = 'transform 0.5s';
-    }, 1300);
+    }, 300);
 });
