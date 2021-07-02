@@ -1,0 +1,308 @@
+/* reset style */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* base style */
+
+html {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* mobile style */
+
+body {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+    url(images/white-and-brown-cooked-dish-on-white-ceramic-bowls-958545.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  float: left;
+  font-size: 2.5rem;
+  color: #f2f2f2;
+  line-height: 80px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.nav {
+  float: right;
+  width: 15rem;
+  background-color: #000;
+  opacity: 0.9;
+  height: 100vh;
+  position: relative;
+  transform: translateX(100%);
+  transition: transform 0.4s;
+  z-index: 1000;
+}
+
+.toggle {
+  position: absolute;
+  color: #f2f2f2;
+  transform: translate(-130%);
+  font-size: 2.5rem;
+  line-height: 80px;
+  z-index: 1500;
+}
+
+.fa-times {
+  display: none;
+}
+
+.sidebar {
+  display: none;
+}
+
+.menu {
+  text-align: center;
+  margin-top: 80px;
+  line-height: 40px;
+}
+
+.nav-item {
+  margin-top: 5px;
+}
+
+.nav-item::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  background-color: yellow;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-item:hover::after {
+  width: 50%;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  display: block;
+}
+.btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  outline: none;
+  border-style: none;
+  background-color: yellow;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.nav.active {
+  transform: translateX(0);
+  transition: transform 0.4s;
+}
+
+.nav.active .toggle .fa-bars {
+  display: none;
+}
+.nav.active .toggle .fa-times {
+  display: block;
+  line-height: 80px;
+}
+
+.content {
+  /* position: absolute;
+  top: 100px;
+  left: 10px; */
+  margin: 130px 0 0 10px;
+  font-size: 4rem;
+  color: #f2f2f2;
+  z-index: 50;
+}
+
+.content p span {
+  color: yellow;
+}
+
+.notification {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 120px;
+  width: 100%;
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5;
+}
+
+.notification-content {
+  grid-column: 1/2;
+  font-size: 1.5rem;
+  padding: 10px 10px;
+  text-align: center;
+  grid-row: 1/2;
+  background-color: yellow;
+}
+.notification-content p {
+  margin-top: 10px;
+}
+.notification-content p a {
+  margin: 0 20px;
+  color: #1e1e1e;
+}
+
+.notification-content p a:hover {
+  background-color: #000;
+  color: yellow;
+  padding: 5px;
+  transition: all 0.4s;
+}
+
+.notification-img {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.notification-img img {
+  width: 100%;
+}
+
+/* laptop style */
+
+@media screen and (min-width: 650px) {
+  header {
+    background-color: transparent;
+    display: flex;
+  }
+
+  .logo {
+    font-size: 3rem;
+    margin-left: 80px;
+    opacity: 0.8;
+    padding-left: 20px;
+    background-color: #000000;
+  }
+
+  .nav {
+    width: 90%;
+    opacity: 0.8;
+    height: 80px;
+    position: none;
+    transform: translateX(0);
+  }
+
+  .toggle {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.8rem;
+    padding: 0 20px;
+  }
+  .nav-item:hover::after {
+    width: 60%;
+  }
+
+  .menu .nav-list {
+    position: absolute;
+    top: 16px;
+    left: 10%;
+  }
+
+  .menu .btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+
+  .sidebar {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 80px;
+    background-color: #000;
+    height: 100vh;
+    color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+  }
+  .search-icons {
+    flex-basis: 60%;
+  }
+
+  .search-icons .fas {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .social-icons {
+    flex-basis: 40%;
+    background-color: yellow;
+    color: #000;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .social-icons .fab {
+    display: block;
+    /* border: 1px solid #000;
+    border-radius: 50%; */
+    line-height: 40px;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 2.5rem;
+  }
+
+  .content {
+    margin-left: 100px;
+    margin-top: 170px;
+    font-size: 5rem;
+  }
+
+  .notification {
+    bottom: 92.5px;
+    height: 40px;
+    width: 30%;
+  }
+
+  .notification-content {
+    font-size: 1.6rem;
+    padding: 30px 10px 0;
+    text-align: center;
+    background-color: yellow;
+  }
+  .notification-content p {
+    margin-top: 20px;
+  }
+
+  /* Take note of the media queries!! max-width and min-width is different take note!! */
+}
